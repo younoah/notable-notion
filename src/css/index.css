@@ -1,0 +1,273 @@
+:root {
+  /* Color */
+  --white-color: #fff;
+  --black-color: #140a00;
+  --blue-color: #185adb;
+  --light-blue-color: #afb9c8;
+  --dark-blue-color: #4b6587;
+  --red-color: #99154e;
+  /* --dark-grey-color: darkgrey; */
+  --grey-dark-color: #909090;
+  --grey-light-color: #efefef;
+
+  /* Size */
+  --padding: 12px;
+  --avatar-size: 36px;
+
+  /* Font Size */
+  --font-extra-large: 22px;
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+}
+
+h1,
+div:focus {
+  outline: none;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  /* align-content: flex-start; */
+  height: 100%;
+}
+
+[contenteditable='true']:empty:before {
+  content: attr(placeholder);
+  color: gray;
+  display: block; /* For Firefox */
+}
+
+/* Side Bar */
+#sidebar {
+  background-color: var(--grey-light-color);
+  width: 10%;
+  min-width: 300px;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  resize: horizontal;
+}
+
+.sidebar__header {
+  margin: var(--padding);
+  font-size: var(--font-large);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid darkgrey;
+}
+
+.logo {
+  margin: var(--padding);
+  display: flex;
+}
+
+.logo i {
+  color: var(--blue-color);
+  cursor: pointer;
+}
+
+.logo-title {
+  margin-left: var(--padding);
+  cursor: pointer;
+}
+
+.hide-button {
+  margin: var(--padding);
+}
+
+.hide-button:hover {
+  font-size: var(--font-large);
+}
+
+.sidebar__add-button {
+  margin: var(--padding);
+  text-align: center;
+}
+
+.add-root-button {
+  margin-top: var(--padding);
+  font-size: var(--font-large);
+}
+
+.add-root-button:hover {
+  font-size: var(--font-extra-large);
+}
+
+.sidebar__document-list-container {
+  margin: var(--padding) var(--padding) var(--padding) 0;
+  height: 90vh;
+  /* max-width: 100%; */
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.document-list {
+  margin: var(--padding) 0 var(--padding) calc(var(--padding) * 2);
+  /* max-width: 100%; */
+}
+
+.document-list.hide {
+  display: none;
+}
+
+.more-button {
+  font-size: var(--font-medium);
+  color: var(--grey-dark-color);
+}
+
+.more-button i {
+  padding: 0 calc(var(--padding) / 2);
+}
+
+.more-button:hover {
+  background-color: var(--dark-blue-color);
+  border-radius: 4px;
+  color: var(--light-blue-color);
+}
+
+.more-button.toggled {
+  transform: rotate(90deg);
+}
+
+.document-item {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.document-container {
+  display: flex;
+  /* align-items: center; */
+  padding: 0 var(--padding);
+}
+
+.document-container:hover {
+  background-color: var(--light-blue-color);
+  border-radius: 4px;
+}
+
+.document-container.selected {
+  background-color: var(--light-blue-color);
+  border-radius: 4px;
+}
+
+.dot {
+  font-size: 2px;
+  margin: auto 3px;
+}
+
+.document-container .fa-genderless {
+  color: var(--grey-dark-color);
+  margin: auto 3px;
+}
+
+.document-title {
+  max-width: 120px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.document-buttons {
+  display: flex;
+}
+
+.add-button,
+.delete-button {
+  margin-right: var(--padding);
+}
+
+.add-button:hover {
+  font-size: var(--font-medium);
+}
+.delete-button:hover {
+  font-size: var(--font-medium);
+}
+
+.delete-button {
+  color: var(--red-color);
+}
+
+/* Editor */
+#editor {
+  margin: var(--padding);
+  width: 80%;
+  min-width: 768px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.editor-container {
+  margin: calc(var(--padding) * 2);
+}
+
+.editor__header,
+.editor__content {
+  margin: calc(var(--padding) * 2) 0;
+}
+
+.editor__header {
+  padding-bottom: var(--padding);
+  border-bottom: 1px solid darkgrey;
+}
+
+.editor__content {
+  height: 90vh;
+}
+
+.editor__logo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.editor__logo-image .fa-accusoft {
+  color: var(--blue-color);
+  font-size: 10rem;
+}
+
+.editor__logo-title {
+  font-size: 3rem;
+}
+
+.editor__logo-comment {
+  margin: var(--padding);
+  font-size: 1rem;
+}
+
+.editor__logo-comment .strong {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
